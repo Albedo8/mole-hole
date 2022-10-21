@@ -123,6 +123,9 @@ function title () {
         ................................................................................................................................................................
         `)
 }
+function level1 () {
+    tiles.setCurrentTilemap(tilemap`level1`)
+}
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     if (level == 0) {
         gamestart()
@@ -168,6 +171,7 @@ function gamestart () {
         `, SpriteKind.Player)
     controller.moveSprite(dori)
     controller.player2.moveSprite(ed)
+    level1()
 }
 let ed: Sprite = null
 let dori: Sprite = null
