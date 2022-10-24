@@ -123,6 +123,16 @@ function title () {
         7777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777
         `)
 }
+controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
+    if (camera == 1) {
+        scene.cameraFollowSprite(ed)
+        camera = 2
+    }
+    if (camera == 2) {
+        scene.cameraFollowSprite(dori)
+        camera = 1
+    }
+})
 function level1 () {
     tiles.setCurrentTilemap(tilemap`level1`)
     tiles.placeOnTile(dori, tiles.getTileLocation(1, 6))
@@ -134,6 +144,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     }
 })
 function gamestart () {
+    camera = 1
     info.setScore(0)
     dori = sprites.create(img`
         . . . . . . . f f . . . . . . . 
@@ -173,9 +184,11 @@ function gamestart () {
         `, SpriteKind.Player)
     controller.moveSprite(dori)
     controller.player2.moveSprite(ed)
+    scene.cameraFollowSprite(dori)
     level1()
 }
-let ed: Sprite = null
 let dori: Sprite = null
+let ed: Sprite = null
+let camera = 0
 let level = 0
 title()
