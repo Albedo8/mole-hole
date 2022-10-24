@@ -123,6 +123,16 @@ function title () {
         7777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777
         `)
 }
+controller.player2.onButtonEvent(ControllerButton.B, ControllerButtonEvent.Pressed, function () {
+    if (camera == 1) {
+        scene.cameraFollowSprite(ed)
+        camera = 2
+    }
+    if (camera == 2) {
+        scene.cameraFollowSprite(dori)
+        camera = 1
+    }
+})
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     if (camera == 1) {
         scene.cameraFollowSprite(ed)
