@@ -125,6 +125,8 @@ function title () {
 }
 function level1 () {
     tiles.setCurrentTilemap(tilemap`level1`)
+    tiles.placeOnTile(dori, tiles.getTileLocation(1, 6))
+    tiles.placeOnTile(ed, tiles.getTileLocation(0, 6))
 }
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     if (level == 0) {
