@@ -143,6 +143,26 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
         gamestart()
     }
 })
+controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
+    dori.setImage(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . 3 . . . . . . 3 . . 
+        . . . . . 3 d . . f f f . d 3 . 
+        . . . . . . . f f f f f f . . . 
+        . . . . 4 f f f f f f f f f . . 
+        3 d d f f f f f f f f f f f f f 
+        3 d d f f f f f f f f f f f f f 
+        . . . . 4 f f f f f f f f f . . 
+        . . . . . . . f f f f f f . . . 
+        . . . . . 3 d . . f f f . d 3 . 
+        . . . . . . 3 . . . . . . 3 . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `)
+})
 function gamestart () {
     camera = 1
     info.setScore(0)
@@ -187,6 +207,26 @@ function gamestart () {
     scene.cameraFollowSprite(dori)
     level1()
 }
+controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
+    dori.setImage(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . 3 . . . . . . 3 . . . . . . 
+        . 3 d . f f f . . d 3 . . . . . 
+        . . . f f f f f f . . . . . . . 
+        . . f f f f f f f f f 4 . . . . 
+        f f f f f f f f f f f f f d d 3 
+        f f f f f f f f f f f f f d d 3 
+        . . f f f f f f f f f 4 . . . . 
+        . . . f f f f f f . . . . . . . 
+        . 3 d . f f f . . d 3 . . . . . 
+        . . 3 . . . . . . 3 . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `)
+})
 let dori: Sprite = null
 let ed: Sprite = null
 let camera = 0
